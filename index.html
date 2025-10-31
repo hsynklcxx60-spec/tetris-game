@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern web tabanlı Tetris oyunu. HTML5 Canvas ve JavaScript ile geliştirilmiş, ücretsiz online Tetris deneyimi.">
+    <meta name="keywords" content="tetris, oyun, puzzle, html5, canvas, javascript, ücretsiz">
+    <meta name="author" content="Tetris Game Developer">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tetris Oyunu - Ücretsiz Online">
+    <meta property="og:description" content="Klasik Tetris oyununu modern web teknolojileri ile oynayın!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/1e3c72/ffffff?text=Tetris+Game">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tetris Oyunu - Ücretsiz Online">
+    <meta name="twitter:description" content="Klasik Tetris oyununu modern web teknolojileri ile oynayın!">
+    
+    <title>🎮 Tetris Oyunu - Ücretsiz Online</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231e3c72' width='100' height='100'/><text y='70' x='50' text-anchor='middle' font-size='60' fill='%2300ff88'>🎮</text></svg>">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Tetris</h1>
+        </div>
+        
+        <div class="game-content">
+            <div class="game-info">
+                <div class="score-section">
+                    <h3>Skor</h3>
+                    <div id="score">0</div>
+                </div>
+                
+                <div class="next-piece-section">
+                    <h3>Sonraki Parça</h3>
+                    <canvas id="next-piece-canvas" width="120" height="120"></canvas>
+                </div>
+                
+                <div class="controls-section">
+                    <h3>Kontroller</h3>
+                    <div class="controls-info">
+                        <p>← → : Hareket</p>
+                        <p>↑ : Döndür</p>
+                        <p>↓ : Hızlı Düşür</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-board-container">
+                <canvas id="game-canvas" width="300" height="600"></canvas>
+                <div id="game-over-screen" class="game-over hidden">
+                    <div class="game-over-content">
+                        <h2>Oyun Bitti!</h2>
+                        <p>Final Skoru: <span id="final-score">0</span></p>
+                        <button id="restart-button">Yeniden Başla</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/tetromino.js"></script>
+    <script src="js/tetrominoFactory.js"></script>
+    <script src="js/gameBoard.js"></script>
+    <script src="js/scoreManager.js"></script>
+    <script src="js/inputHandler.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/tetrisGame.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
